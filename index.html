@@ -1,0 +1,55 @@
+<html lang='en'>
+
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <!-- Custom styling -->
+  <link rel='stylesheet' href='css/styles.css'>
+  <!-- Custom font -->
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap'>
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  <link rel="icon" type="image/png" sizes="16x16" href="fav/fav.png">
+  <!-- TODO: Add Javascript files here -->
+  <script src="math.js"></script>
+  <script src="drawing.js"></script>
+  <script src="proccessing.js"></script>
+  <script src="vendor/opencv.js"></script>
+
+</head>
+
+<body>
+
+  <div class='container'>
+
+    <!-- TODO: Add title here -->
+
+    <h1 ><span id='math'>Math </span><span id='garden'> Garden</span></h1>
+
+    <h2 id='question'><span id='n1'>3</span> + <span id='n2'>2</span> = </h2>
+
+    <!-- TODO: Add a drawing canvas here -->
+    <canvas id='my-canvas' width="150" height="150" style="vertical-align: top ; display: inline ;border: 5px solid #FFFFFF ;border-radius: 5% ;margin-left: 25px ;cursor:crosshair;"></canvas>
+
+  </div>
+
+  <div class='container'>
+    <button id='checkAnswer' class='btn' value='Check'>Check Answer</button>
+  </div>
+
+  <!-- TODO: Set up TF model and drawing logic-->
+  <script>
+    
+    loadModel();
+    prepareCanvas();
+    nextQuestion();
+
+    document.getElementById('checkAnswer').addEventListener('click',function(){
+      //alert("Check answer clicked");
+      checkAnswer();
+      clearCanvas();
+      nextQuestion();
+    });
+  </script>
+</body>
+
+</html>
